@@ -141,11 +141,11 @@ $(()=>{
     }   
     }//pokeStart end
   
+    $($startGame).on('click', () => {
+        
+        $($message).show();
+        pokeStart();
+    })
 
-$($startGame).on('click', () => {
-    
-    $($message).show();
-    pokeStart();
-})
 })//closes onload
 
