@@ -16,6 +16,7 @@ $(()=>{
                 $message.text('Your attack was strong!');
                 
                 
+                
             
         }
         checkHealth = () => {
@@ -102,8 +103,12 @@ $(()=>{
     const attackAndCheckWin = () => {
         myPokemon.attack();
         enemyPokemonFighter.checkWin();
-        
     }
+    const attackAndCheckHealth = () => {
+        enemyPokemonFighter.attack();
+        myPokemon.checkHealth();
+    }
+        
     const pokeStart = () => {
     
     for (let i = 0; i < enemyPokemonFighter.enemyFightersArr.length; i++){
@@ -115,7 +120,7 @@ $(()=>{
                     attackAndCheckWin();
                 });
                     
-                pokeStart = 'defend';
+                pokeState = 'defend';
                 
                     if (enemyPokemonFighter.checkWin === true){
                         $($message).text('Bring on the next challenger!');
@@ -127,18 +132,10 @@ $(()=>{
                 
                 
             else if (pokeState === 'defend') {
-                
-                    // enemyPokemonFighter.attack();
-                    // myPokemon.checkHealth();
-                    // $pikachuHealth.text('Pikachu\'s health is: ' + myPokemon.health);
-                    // // $defendBtn.text('Good block, minimal damage was done!');
-                    // pokeState = 'attack';
-                    console.log('testing');
-                
-                
+                $($defendBtn).on('click', attackAndCheckHealth());
+                $this.preventDefault();
+                pokeState = 'attack';  
             }
-    
-               
         }
     }   
     }//pokeStart end
