@@ -21,7 +21,8 @@ $(()=>{
         }
         checkHealth = () => {
             if (this.health <= 0){
-                console.log('Pikachu is dead');
+                $message.text('Pikachu is dead');
+                return true;
             }else {
                 $pikachuHealth.text('Pikachu\'s health is: ' + myPokemon.health);
                 
@@ -132,10 +133,14 @@ $(()=>{
                 
                 
             else if (pokeState === 'defend') {
-                $($defendBtn).on('click', attackAndCheckHealth());
+                $($defendBtn).on('click', () => {
+                attackAndCheckHealth();
                 $this.preventDefault();
                 pokeState = 'attack';  
+                
             }
+            
+            )};
         }
     }   
     }//pokeStart end
