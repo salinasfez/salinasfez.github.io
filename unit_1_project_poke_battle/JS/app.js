@@ -111,7 +111,9 @@ $(()=>{
         
             if (pokeState === 'attack'){
                 
-                $($attackBtn).on('click', attackAndCheckWin());
+                $($attackBtn).on('click', () => {
+                    attackAndCheckWin();
+                });
                     
                 pokeStart = 'defend';
                 
