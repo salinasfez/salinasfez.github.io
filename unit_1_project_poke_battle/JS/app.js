@@ -13,14 +13,17 @@ $(()=>{
         attack = () => {
             
                 enemyPokemonFighter.enemyFightersArr[0].health -= this.damage;
+                $message.text('Your attack was strong!');
+                
                 
             
         }
         checkHealth = () => {
             if (this.health <= 0){
-                alert('Good luck next time!');
+                console.log('Pikachu is dead');
             }else {
-                alert('Pikachu\'s health is: ' + this.health);
+                $pikachuHealth.text('Pikachu\'s health is: ' + myPokemon.health);
+                
             }
         }
        
@@ -59,101 +62,90 @@ $(()=>{
             if (this.enemyFightersArr[0].health <= 0){
                 
                 enemyPokemonFighter.enemyFightersArr.shift();
-                alert('Well done, let us move on to the next battle!');
-                alert('Your next opponent is ' + enemyPokemonFighter.enemyFightersArr[0].name);
+                $message.text('Your next opponent is ' + enemyPokemonFighter.enemyFightersArr[0].name);
                 return true;
+                    
                 
             }else {
-                alert(enemyPokemonFighter.enemyFightersArr[0].name + '\'s health: ' + enemyPokemonFighter.enemyFightersArr[0].health);
+                $oppopentsHealth.text(enemyPokemonFighter.enemyFightersArr[0].name + '\'s health: ' + enemyPokemonFighter.enemyFightersArr[0].health);
+                
                 return false;
                 
             }
         }
+                
     }
         
         
+    const enemyPokemonFighter = new EnemyPokemonFighters();
         
 
-    const enemyPokemonFighter = new EnemyPokemonFighters();
     //creating my enemy pokemon array dynamically
     enemyPokemonFighter.generateOpponent('Bulbasaur', 'Poison');
     enemyPokemonFighter.generateOpponent('Squirtle', 'Water');
     enemyPokemonFighter.generateOpponent('Charmeleon', 'Fire');
     enemyPokemonFighter.generateOpponent('Onix', 'Rock ');
     
+    //Jquery variables
+    const $startGame = $('#start-button');
+    const $attackBtn = $('.attack');
+    const $defendBtn = $('.defend');
+    const $oppopentsHealth = $('.opponent-health').text(enemyPokemonFighter.enemyFightersArr[0].name + '\'s health: ' + enemyPokemonFighter.enemyFightersArr[0].health);
+    const $pikachuHealth = $('.my-health').text('Pikachu\'s health is: ' + myPokemon.health);
+    const $message = $('#message').text('Ready, Set, Go!');
+    $message.hide();
+    
     
     
     
    
+    const attackAndCheckWin = () => {
+        myPokemon.attack();
+        enemyPokemonFighter.checkWin();
+        
+    }
     const pokeStart = () => {
+    
     for (let i = 0; i < enemyPokemonFighter.enemyFightersArr.length; i++){
         for (let x = 0; x < enemyPokemonFighter.enemyFightersArr[i].health; x++){
         
-            
-                if (pokeState === 'attack'){
-                    alert('Your attack was strong!');
-                    myPokemon.attack();
+            if (pokeState === 'attack'){
+                
+                $($attackBtn).on('click', attackAndCheckWin());
                     
-                    enemyPokemonFighter.checkWin();
-                    
-                    pokeState = 'defend';
-                        if (enemyPokemonFighter.checkWin === true){
-                            alert('bring on the next pokemon');
-                            
-                        }else {
-                            alert('be ready to block');
-                        }
-                    
-                }else if (pokeState === 'defend') {
-                    enemyPokemonFighter.attack();
-                    alert('Good block, minimal damage was done!');
-                    myPokemon.checkHealth();
-                    pokeState = 'attack';
+                pokeStart = 'defend';
+                
+                    if (enemyPokemonFighter.checkWin === true){
+                        $($message).text('Bring on the next challenger!');
+                        
+                    }else {
+                        $($message).text('Be Ready to Block!');
+                    }
                 }
-                //if they're health is equal to 0.. return I won;
-                //new if my health is 0 then they won the game
+                
+                
+            else if (pokeState === 'defend') {
+                
+                    // enemyPokemonFighter.attack();
+                    // myPokemon.checkHealth();
+                    // $pikachuHealth.text('Pikachu\'s health is: ' + myPokemon.health);
+                    // // $defendBtn.text('Good block, minimal damage was done!');
+                    // pokeState = 'attack';
+                    console.log('testing');
+                
+                
+            }
+    
+               
         }
     }   
-}//pokeStart end
-// pokeStart();
-                    
-                    
-                        
-            
-        
+    }//pokeStart end
+  
 
-
+$($startGame).on('click', () => {
     
- 
+    $($message).show();
+    pokeStart();
+})
 })//closes onload
 
-
-
-
-
-
-
-
-
-
-
-//    // $('form').on('submit', (event)=>{
-
-//     //     event.preventDefault();
-
-//     //     const userInput = $('input[type="text"]').val();
-
-//     $.ajax({
-//         url:'http://pokeapi.co/api/v2/pokemon/1/' 
-//     }).then(
-//         (data)=>{
-//             // $('#title').html(data.Title);
-//             // $('#year').html(data.Year);
-//             // $('#rated').html(data.Rated);
-//             console.log(data);
-//         },
-//         ()=>{
-//             console.log('bad');
-//         }
-// //     );
-// )  // })
