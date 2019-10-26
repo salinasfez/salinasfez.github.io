@@ -8,7 +8,7 @@ body {
     background: black;
     
 }
-button a {
+#start-button {
     
     font-size: 20px;
     text-decoration: none;
@@ -21,6 +21,15 @@ button a {
     
 }
 .attack {
+    background-color: black;
+    color: white;
+    width: 33%;
+    height: 75px;
+    
+    margin-top: 0; 
+    font-size: 20px;
+}
+.defend {
     background-color: black;
     color: white;
     width: 33%;
@@ -108,4 +117,18 @@ button a {
     max-width: 30%;
     max-height: 30%;
     display: none;
+}
+.message {
+    display: flex;
+    justify-content: center;
+}
+#message {
+    margin-top: 100px;
+    animation-name: message;
+    animation-duration: 1s;
+    
+}
+@keyframes message {
+    from {transform: scale(0)};
+    to {transform: scale(6);}
 }
