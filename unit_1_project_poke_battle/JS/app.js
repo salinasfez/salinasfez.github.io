@@ -21,7 +21,7 @@ $(()=>{
         }
         checkHealth = () => {
             if (this.health <= 0){
-                $message.text('Pikachu is dead');
+                $message.text('Pikachu is dead, you lose!');
                 return true;
             }else {
                 $pikachuHealth.text('Pikachu\'s health is: ' + myPokemon.health);
@@ -119,6 +119,7 @@ $(()=>{
                 
                 $($attackBtn).on('click', () => {
                     attackAndCheckWin();
+                   
                 });
                     
                 pokeState = 'defend';
