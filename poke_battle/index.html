@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+     <script src="JS/app.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+     <link href="CSS/main.css" rel="stylesheet">
+    <title>Poke Battle</title>
+</head>
+<body>
+    <!-- model 1 -->
+    <div id="ex1" class="modal">
+            <p>Once upon a time Pikachu was the most popular of them all, now everyone is against him. Help him defeat them all!</p>
+            <a href="#" rel="modal:close" class="btn-min">Close</a>
+    </div>
+    <!-- command butttons -->
+    <div class="flex-box">
+            <button id="start-button" type="button">Poke Start</button>
+            <!-- <button id="start-button"><a href="#ex1" rel="modal:open" class="btn">StartGame</a></button> -->
+            <button type="button" class="attack">Attack</button>
+            <button type="button" class="defend">Defend</button>
+            <button type="button" class="reset">Reset</button>
+
+    </div>
+    <!-- health displays -->
+    <div class="healths">
+    <h2 class="my-health">Pikachu's Health:</h2>
+    
+    <h2 class="opponent-health">Opponent's Health: </h2>
+    </div>
+    <div class="game-board">
+        <img src="IMAGES/pikachu.png" class="pikachu">
+        <img src="IMAGES/flippikachuattack.png" class="pikachu-attack">
+        <img src="IMAGES/balbasaurr.png" class="balbasaur">
+        <img src="IMAGES/Vine_Whip_balbasaur.png" class="balbasaur-attack">
+        <img src="IMAGES/squirtle.jpg" class="squirtle">
+        <img src="IMAGES/flipsquirtleattack.jpg" class="squirtle-attack">
+        <img src="IMAGES/charmeleonn.jpg" class="charmeleon">
+        <img src="IMAGES/charmeleonattack.png" class="charmeleon-attack">
+        <img src="IMAGES/onix.png" class="onix">
+        <img src="IMAGES/fliponix_attack.png" class="onix-attack">
+
+
+    </div>
+
+    <div class="message">
+        <h2 id="message">Message</h2>
+
+    </div>
+    
+    
+    
+    
+
+
+
+
+
+
+</body>
+</html>
