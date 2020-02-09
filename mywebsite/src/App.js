@@ -1,15 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from './components/Main.js';
+import { Route, NavLink } from 'react-router-dom';
+import './components/Contact.js';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Federico Salinas
-        </p>
-      </header>
+      <Route path='/' component={Main}/>
     </div>
   );
 }
