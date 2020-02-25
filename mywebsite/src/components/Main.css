@@ -21,14 +21,7 @@ img {
     opacity: .5;
   }
 
-.navbar {
-    margin-left: 120px;
-    width: 80%;
-    /* color: white; */
-    color: black;
-    display: flex;
-    justify-content: space-around;
-}
+
 .who-i-am {
     /* color: white; */
     color: black;
