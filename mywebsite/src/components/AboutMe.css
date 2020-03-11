@@ -1,0 +1,25 @@
+
+
+.flex-container {
+    margin: 0 auto;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+}
+.flex-item {
+    margin-top: 5%;
+}
+.federico {
+    width: 300px;
+    border-radius: 1em;
+}
+#paragraph {
+    text-align: start;
+    background-color: #037AFB;
+    padding: 5%;
+}
+#technologies {
+    background-color: #E93F33;
+    padding: 5%;
+}

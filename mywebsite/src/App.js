@@ -5,18 +5,19 @@ import Contact from './components/Contact.js';
 import Projects from './components/Projects';
 import AboutMe from './components/AboutMe';
 import './App.css';
+import { Nav } from 'react-bootstrap';
 
 
 
 function App() {
   return (
     <BrowserRouter>
-        <nav className='navbar'>
+        <Nav className='navbar' variant='pills' defaultActiveKey='/'>
           <NavLink className='nav-link' to='/'>Home</NavLink>
           <NavLink className='nav-link'  to='/projects'>Projects</NavLink>
           <NavLink className='nav-link'  to='/aboutme'>About Me</NavLink>
           <NavLink className='nav-link'  to='/contact'>Contact</NavLink>
-        </nav>
+        </Nav>
         <Route exact path='/' component={Main}/>
         <Route exact path='/contact' component={Contact}/>
         <Route exact path='/projects' component={Projects}/>
