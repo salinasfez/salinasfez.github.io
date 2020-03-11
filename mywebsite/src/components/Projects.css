@@ -18,6 +18,8 @@ body {
 .images{
     width: 30%;
 }
+    
+
 .image-container {
     display: flex;
     flex-direction: row;
