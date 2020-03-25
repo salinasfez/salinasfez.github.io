@@ -19,10 +19,12 @@
     text-align: start;
     background-color: rgb(28, 124, 227);
     padding: 5%;
+    font-size: 18px;
 }
 #technologies {
     background-color: #d0cfcf;
     padding: 5%;
+    font-size: 18px;
 }
 #download-resume-section {
     margin-top: 5%;

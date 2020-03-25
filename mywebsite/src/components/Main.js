@@ -47,7 +47,7 @@ class Main extends React.Component{
                     <img src={require('../images/email-icon.svg')} alt={'github'} className='icons'onClick={() => this.emailTab()}/>
                     <img src={require('../images/phone-icon.png')} alt={'github'} className='icons' onClick ={() => this.callFederico()}/>
                     {/* <img src={require('../images/resume-icon.svg')} alt={'github'} className='icons' onClick={() => this.downloadResume()}/> */}
-                    <a id='resume-link' download='federico_salinas_resume.pdf' href={resume}><img width={'110%'} height={'100%'} src={require('../images/resume-icon.svg')} alt={'github'}/></a>
+                    <a id='resume-link' className='icons' download='federico_salinas_resume.pdf' href={resume}><img  width={'110%'} height={'100%'} src={require('../images/resume-icon.svg')} alt={'github'}/></a>
                 </div>
                 </div>
             </div>

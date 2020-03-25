@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap');
 .flex-container {
     margin: 0 auto;
     margin-top: 4%;
@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Roboto';
+    font-family: 'Baloo Thambi 2, cursive;';
     text-align: center;
 }
 
@@ -17,13 +17,25 @@ body {
 }
 .images{
     width: 30%;
-}
     
+}
+.images:hover {
+    transform: scale(1.5);
+}
+.projects-paragraph {
+    margin-top: 5%;
+    background-color: rgb(28, 124, 227);
+    padding: 2%;
+    text-align: left;
+    font-size: 19px;
+}
 
 .image-container {
+    margin-top: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 2%;
 }
 .project-links {
     text-align: start;
