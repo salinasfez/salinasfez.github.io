@@ -31,3 +31,38 @@
     background-color: #d0cfcf;
     height: 20%;
 }
+@media screen and (max-width: 812px) {
+    .flex-container{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 450px){
+    .flex-container {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .image-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .images{
+        width: 100%;
+        margin-top: 5%;
+        /* border-top: 1px dashed black; */
+    }
+    #main-header {
+        font-size: 20px;
+    }
+    .projects-paragraph {
+        width: 100%;
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+    #first-image {
+        margin-top: 0%;
+    }
+}
